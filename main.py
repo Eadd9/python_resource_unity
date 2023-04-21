@@ -118,10 +118,10 @@ def run():
                 Auto_veh.append(veh)
         SumoObjects01 = StepSumo(SumoObjects)
         All_Vehicle_message = ToUnity(SumoObjects01)#路网中所有车辆的信息（以字符串形式）
-        print(All_Vehicle_message)
+        # print(All_Vehicle_message)
         sock.sendall(All_Vehicle_message.encode("UTF-8"))  # Converting string to Byte, and sending it to C#
         receivedData = sock.recv(1024).decode("UTF-8")  # receiveing data in Byte fron C#, and converting it to String
-        # print(receivedData)
+        print(receivedData)
 
 
 
