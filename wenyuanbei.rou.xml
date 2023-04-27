@@ -1,40 +1,97 @@
 <!-- vehicle flow definition -->
 <routes>
-	<vType id="autovehicle" color="255,255,0" length="4" width="1.5" accel="5" decel="6" maxSpeed="80" />
-    <vType id="ordinaryvehicle" color="255,0,0" length="4" width="1.5" accel="5" decel="6" maxSpeed="80" />
+	<vType id="autovehicle" color="255,255,0" length="4" width="1.5" accel="7" decel="3" maxSpeed="120" tau="0.5" />
+    <vType id="ordinaryvehicle" color="255,0,0" length="4" width="1.5" accel="2" decel="7" maxSpeed="30" />
     <vType id="Testvehicle" color="0,255,0" length="4" width="1.5" accel="5" decel="6" maxSpeed="80" />
 
 
-    <route id="route0" edges="-E0 E3 E4 E6 E7 E11"/>
-    <route id="route1" edges="-E1 E2 "/>
-    <route id="route2" edges="-E72 -E67 -E66 -E63 -E1 E2 "/>
-    <route id="route3" edges="-E0 E3 E4 E6 E7 E12 E15 E16 E20 E22 E23 "/>
-    <route id="route4" edges="547178884#8 570615905#0 570615905#1 -E84 E75 E78 -E79 "/>
+    <route id="route0" edges="E33 E35 E56"/>
+    <route id="route1" edges="E33 E35 E56"/>
+    <route id="route2" edges="E33 E35 E56"/>
+    <route id="route3" edges="-E35 E34"/>
+<!--    <route id="route4" edges="E33 E35 E49 E51 -E45 -E32 "/>-->
 
-    <!--场景1的路由 10个路口 2023年3月23日星期四-->
-    <route id="route5" edges="-E1000 E99 -E40 -E28"/>
-    <route id="route6" edges="-E1000 E99 E41 E43"/>
-    <route id="route7" edges="-E1000 E99 -E40 E33 E35 E49"/>
-    <route id="route8" edges="E28 E40 E41 -546534066#0"/>
-    <route id="route9" edges="E32 E45 -E51 -E49 -E55 "/>
-    <route id="route10" edges="E33 E35 E49 E51 -E45 -E32"/>
-    <route id="route11" edges="E43 E55 -E35 -E33"/>
-    <route id="route12" edges="-E28 E32 -E34 -E33 E40 -E99 E1000"/>
-    <route id="route13" edges="-E97 E55 E49 E51 -E45 -E32"/>
-    <route id="route14" edges="E35 -E55 E97 "/>
-    <route id="route15" edges="-E35 -E33 -E28 E32 E45"/>
-    <route id="route16" edges="-E33 E40 E41 -546534066#0"/>
-    <route id="route17" edges="-E42 -E41 -E40 -E28 E32"/>
-    <route id="route18" edges="E42 E35 E49 E51 -E45"/>
-    <route id="route19" edges="-E34 -E33 E40 E41 E43"/>
-    <route id="route20" edges="E55 E49 E51 -E45 -E32 E28 E40 -E99 E1000"/>
-    <route id="route21" edges="-E55 -E43 E42 -E33 -E28"/>
+<!--    &lt;!&ndash;场景1的路由 10个路口 2023年3月23日星期四&ndash;&gt;-->
+<!--    <route id="route5" edges="-E56 -E35 E34"/>-->
+<!--    <route id="route6" edges="-E1000 E99 E41 E43"/>-->
+<!--    <route id="route7" edges="-E1000 E99 -E40 E33 E35 E49"/>-->
+<!--    <route id="route8" edges="E28 E40 E41 -546534066#0"/>-->
+<!--    <route id="route9" edges="E32 E45 -E51 -E49 -E55 "/>-->
+<!--    <route id="route10" edges="E33 E35 E49 E51 -E45 -E32"/>-->
+<!--    <route id="route11" edges="-E56 -E35 E34"/>-->
+<!--    <route id="route12" edges="-E28 E32 -E34 -E33 E40 -E99 E1000"/>-->
+<!--    <route id="route13" edges="-E97 E55 E49 E51 -E45 -E32"/>-->
+<!--    <route id="route14" edges="E35 -E55 E97 "/>-->
+<!--    <route id="route15" edges="-E35 -E33 -E28 E32 E45"/>-->
+<!--    <route id="route16" edges="-E33 E40 E41 -546534066#0"/>-->
+<!--    <route id="route17" edges="-E56 -E35 E34"/>-->
+<!--    <route id="route18" edges="E42 E35 E49 E51 -E45"/>-->
+<!--    <route id="route19" edges="-E56 -E35 E34"/>-->
+<!--    <route id="route20" edges="E33 E35 E49 E51 -E45 -E32"/>-->
+<!--    <route id="route21" edges="E33 E35 E49 E51 -E45 -E32"/>-->
 
 
 
 
     <vehicle id="car0" type="autovehicle"  depart="0"  route="route0" />
     <vehicle id="car1" type="ordinaryvehicle"  depart="0"  route="route1" />
+<!--    <vehicle id="car2" type="autovehicle"  depart="0"  route="route2" />-->
+<!--    <vehicle id="car3" type="ordinaryvehicle"  depart="0"  route="route3" />-->
+<!--    <vehicle id="car4" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car5" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car6" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car7" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car8" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car9" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car10" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car11" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car12" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car13" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car14" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car15" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car16" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car17" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car18" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car19" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car20" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car21" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car22" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car23" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car24" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car25" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car26" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car27" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car28" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car29" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car30" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car31" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car32" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car33" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car34" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car35" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car36" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car37" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car38" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car39" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car40" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car41" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car42" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car43" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car44" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car45" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car46" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car47" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car48" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car49" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car50" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car51" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car52" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car53" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+<!--    <vehicle id="car54" type="autovehicle"  depart="0"  route="route0" />-->
+<!--    <vehicle id="car55" type="ordinaryvehicle"  depart="0"  route="route1" />-->
+
+
+
 
 <!--	<vehicle id="carTest" type="Testvehicle" depart="0.00" departLane="free" >-->
 <!--        <route edges="570615898#0 570615898#1 570615898#2 1046103487"/>-->

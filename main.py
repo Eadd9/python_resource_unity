@@ -24,7 +24,7 @@ if 'SUMO_HOME' in os.environ:
 else:
     sys.exit("please declare environment variable 'SUMO_HOME'")
 
-Car_num = 100#设置所需车辆数量
+Car_num = 200#设置所需车辆数量
 
 # -------------------------设置与Unity之间的通信---------------------
 # ------------------------------------------------------------------------
@@ -97,17 +97,19 @@ def run():
     auto_num = 0
     ordinary_num = 0
     for i in range(Car_num):
-            Vtype = random_pick_with_ratio(Vtype_list,[70,30])#产生列表，两个元素相加要与Car_num变量相等
+            Vtype = random_pick_with_ratio(Vtype_list,[100,100])#产生列表，两个元素相加要与Car_num变量相等
             if Vtype[i] == "autovehicle":
                 auto_num = auto_num + 1
             else:
                 ordinary_num = ordinary_num + 1
-            traci.vehicle.add(f"car{i + 2}", f"route{generate_random_integer(0, 21)}", Vtype[i])#此处修改可选路径
+            traci.vehicle.add(f"car{i + 2}", f"route{generate_random_integer(0, 2)}", Vtype[i])#此处修改可选路径
+            # traci.vehicle.setSpeed(f"car{i + 2}",random.randint(55,80))
     print(f"自动驾驶车辆：{auto_num}辆")
     print(f"普通车辆：{ordinary_num}辆")
 
     # 生成车辆的数据
     SumoObjects = []
+
     for step in range(80000):
         traci.simulationStep()
         # 获取道路上自动驾驶车辆的ID信息
@@ -121,6 +123,21 @@ def run():
         # print(All_Vehicle_message)
         sock.sendall(All_Vehicle_message.encode("UTF-8"))  # Converting string to Byte, and sending it to C#
         receivedData = sock.recv(1024).decode("UTF-8")  # receiveing data in Byte fron C#, and converting it to String
+        # print(traci.edge.getLastStepVehicleNumber("E35"))
+        number = 0
+
+        for i in traci.edge.getLastStepVehicleIDs("E35"):
+            if traci.vehicle.getTypeID(i) == "autovehicle":
+                traci.vehicle.setSpeed(i, random_select([60, 80, 90, 100, 120]))
+                if traci.vehicle.getSpeed(i) <= 40:
+                    if traci.vehicle.getLaneIndex(i) > 0:
+                        traci.vehicle.changeSublane(i,-1)
+                    elif traci.vehicle.getLaneIndex(i) < 2:
+                        traci.vehicle.changeSublane(i,1)
+                number = number + 1
+            else:
+                traci.vehicle.setSpeed(i,random_select([10,20,30,40,50]))
+        print(traci.edge.getLastStepVehicleNumber("E35"))
         print(receivedData)
 
 
